@@ -4,13 +4,27 @@ import java.util.Arrays;
 
 public class ShellSort2{
 
+/* Método                                                                                            |
+|   Inicialmente a sequencia original é dividida em grupos(normalmente ao meio);                     |
+|   O resultado dessa divisão é guardado em uma variável h;                                          |
+|   Em seguida são aplicadas ordenações nos sub-grupos;                                              |
+|   O valor de h vai ser dividido ao meio até que o valor seja unitário.                             |
+|   Porque foi criado:                                                                               |
+|   Ordenação por inserção só troca itens adjacentes para determinar o ponto de inserção.            |
+|   São efetuadas n-1 comparações e movimentações quando o menor item está na última posição         |
+|   Vantagens:                                                                                       |
+|   Shellsort é uma ótima opção para arquivos de tamanho moderado.                                   |
+|   Sua implementação é simples e requer uma quantidade de código pequena                            |
+|   Desvantagens:                                                                                    |
+|   O tempo de execução do algoritmo é sensível à ordem inicial do arquivo  O método não é estável  */
+
     public static void main(String []args){
-        int[] a = {9,8,7,6,5,4,3,2,1};//plz use sophisticated random number generator
+        int[] a = {9,8,7,6,5,4,3,2,1};//Pode-se usar um gerador de números mais sofisticado
         System.out.println( Arrays.toString(a) );
         System.out.println( Arrays.toString(shellSort(a)) );
     }
 
-    //Performs a shell sort on an array of ints.
+    //Executa o sorteador em uma matriz de inteiros
     public static int[] shellSort(int[] array){
         int h = 1;
         while (h < array.length) h = 3*h + 1;
@@ -25,10 +39,10 @@ public class ShellSort2{
                         j-=h;
                     }
                     array[j+h] = key;
-                    //-> invariant: array[0,h,2*h..j] is sorted
+                    //-> Não varia: array[0,h,2*h..j] é sorteado
                 }
             }
-            //->invariant: each h-sub-array is sorted
+            //->Não varia: cada h sub array é classificado
         }
         return array;
     };
