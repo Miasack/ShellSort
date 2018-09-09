@@ -24,25 +24,25 @@ public class ShellSort {
       public void shellSort() {
         int inner, outer;
         long temp;
-        //find initial value of h
+        //Achando o valor inicial de h
         int h = 1;
         while (h <= len / 3)
           h = h * 3 + 1; // (1, 4, 13, 40, 121, ...)
 
-        while (h > 0) // decreasing h, until h=1
+        while (h > 0) // diminuindo h, até h=1
         {
-          // h-sort the file
+          // h-sorteando o arquivo
           for (outer = h; outer < len; outer++) {
             temp = data[outer];
             inner = outer;
-            // one subpass (eg 0, 4, 8)
+            // um subpasso (eg 0, 4, 8)
             while (inner > h - 1 && data[inner - h] >= temp) {
               data[inner] = data[inner - h];
               inner -= h;
             }
             data[inner] = temp;
           }
-          h = (h - 1) / 3; // decrease h
+          h = (h - 1) / 3; // diminui h
         }
       }
 
