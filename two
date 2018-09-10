@@ -19,7 +19,7 @@ public class ShellSort2{
 |   O tempo de execução do algoritmo é sensível à ordem inicial do arquivo  O método não é estável  */
 
     public static void main(String []args){
-        int[] a = {9,8,7,6,5,4,3,2,1};//Pode-se usar um gerador de números mais sofisticado
+        int[] a = {9,8,7,6,5,4,3,2,1,11,10,-1};//Pode-se usar um gerador de números mais sofisticado
         System.out.println( Arrays.toString(a) );
         System.out.println( Arrays.toString(shellSort(a)) );
     }
